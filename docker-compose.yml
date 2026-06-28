@@ -1,0 +1,13 @@
+services:
+  triage:
+    build: .
+    image: support-ticket-triage:latest
+    ports:
+      - "8000:8000"
+    environment:
+      # Injected from your shell / .env — never baked into the image.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      MODEL_NAME: ${MODEL_NAME:-claude-haiku-4-5-20251001}
+      MAX_CONCURRENCY: ${MAX_CONCURRENCY:-5}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    restart: unless-stopped

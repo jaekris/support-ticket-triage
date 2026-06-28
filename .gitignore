@@ -1,0 +1,20 @@
+.env
+data/
+data/outputs/
+logs/
+*.db
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+venv/
+
+# Local harness / editor config — not part of the project
+.claude/
+
+# Build artifacts
+*.egg-info/
+build/
+dist/
+.ruff_cache/
+.mypy_cache/
